@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">HearingTest</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_copy">Digit in Noise helps you uncover hidden digits lost in the noise.Unleash your inner detective by isolating digits triplets played. </string>
+    <string name="hearing_title">Hearing Test</string>
+    <string name="hearing_copy">Think you\'ve got a keen ear? Put your listening skills to the ultimate test in this 10-round challenge. In each round, three hidden digits will be masked by noise. Listen closely and decipher the secret number by entering it into the field below.</string>
+    <string name="user_details_title">User Details</string>
+    <string name="user_details_copy">Before we embark on this auditory adventure, let\'s gather some intel to fine-tune your hearing test.Think of it as suiting up for your sonic mission! Here\'s a quick pit stop to tell us a little about yourself:</string>
+    <string name="result_title">Results</string>
+    <string name="result_copy">You\'ve Conquered the Hearing Test! Ready to see how awesome your ears are? Here\'s the intel on your hearing test:</string>
+    <string name="button_label_start_test">Start Test</string>
+    <string name="button_label_submit">Submit</string>
+    <string name="button_label_next">Next</string>
+    <string name="button_label_continue">Continue</string>
+    <string name="button_label_exit_test">Exit Test</string>
+    <string name="button_label_view_results">View Results</string>
+    <string name="destination_welcome">welcome</string>
+    <string name="destination_user_detail">user</string>
+    <string name="destination_hearing">hearing</string>
+    <string name="destination_results">results</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="enter_digits">Secret Numbers</string>
+    <string name="date_of_birth">Date Of Birth dd/mm/yyyy</string>
+    <string name="email_address">Email Address:</string>
+    <string name="secret_code">Secret Code:</string>
+    <string name="message_loading">Loading</string>
+    <string name="message_error">We\'re sorry, there seems to be a temporary glitch on our end, and we couldn\'t complete your request. Please try again later.</string>
+    <string name="questions_answered_correctly">Questions Answered:</string>
+    <string name="of_10">of 10</string>
+    <string name="difficulty">Difficulty:</string>
+    <string name="score">Score:</string>
+    <string name="dialog_title_congratulations">Congratulations</string>
+    <string name="message">You\'ve completed your hearing test. Your final</string>
+    <string name="dialog_button_results">View Results</string>
+    <string name="dialog_button_cancel">Cancel</string>
+</resources>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.leaf.hearingtest.ui.user.UserDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/user_detail_copy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
+            android:padding="@dimen/half_default_padding"
+            android:text="@string/user_details_copy"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/half_default_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+            app:layout_constraintTop_toBottomOf="@+id/user_detail_copy"
+            app:layout_constraintVertical_bias="0.01999998"
+            tools:layout_editor_absoluteX="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/half_default_margin"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/half_default_margin"
+                android:hint="@string/first_name"
+                app:endIconMode="clear_text"
+                app:endIconTint="?android:attr/textColorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="@={viewmodel.firstName}"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/half_default_margin"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/half_default_margin"
+                android:hint="@string/last_name"
+                app:endIconMode="clear_text"
+                app:endIconTint="?android:attr/textColorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="@={viewmodel.lastname}"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/half_default_margin"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/half_default_margin"
+                android:hint="@string/email_address"
+                app:endIconMode="clear_text"
+                app:emailInputCheck="@{viewmodel.emailAddress}"
+                app:endIconTint="?android:attr/textColorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewmodel.emailAddress}"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_of_birth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="@dimen/half_default_margin"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:layout_marginBottom="@dimen/half_default_margin"
+                app:dateInputCheck="@{viewmodel.dateOfBirth}"
+                android:hint="@string/date_of_birth"
+                app:endIconMode="clear_text"
+                app:endIconTint="?android:attr/textColorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="datetime"
+                    android:text="@={viewmodel.dateOfBirth}"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_btn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
+            android:text="@string/button_label_submit"
+            android:enabled="@{viewmodel.firstName.length() > 0 &amp;&amp; viewmodel.lastname.length() > 0  &amp;&amp; viewmodel.emailAddress.length() > 0 &amp;&amp; viewmodel.dateOfBirth.length() > 0}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:strokeColor="?android:attr/textColorPrimary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
